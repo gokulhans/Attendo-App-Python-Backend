@@ -2,6 +2,13 @@
 # exit on error
 set -o errexit
 
+# Install Python packages
+pip install --upgrade pip
+pip install -r requirements.txt
+
+# Create necessary directories
+mkdir -p ~/.cache/dlib
+
 # Install system dependencies
 apt-get update
 apt-get install -y build-essential cmake
