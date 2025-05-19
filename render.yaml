@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: attendease-api
+    env: python
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: gunicorn wsgi:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: MONGODB_URI
+        sync: false 
