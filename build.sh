@@ -2,9 +2,13 @@
 # exit on error
 set -o errexit
 
+# Set environment variables for dlib
+export DLIB_USE_CUDA=0
+export FORCE_CMAKE=1
+
 # Install Python packages
 pip install --upgrade pip
-pip install -r requirements.txt
+pip install --no-cache-dir -r requirements.txt
 
 # Create necessary directories
 mkdir -p ~/.cache/dlib
